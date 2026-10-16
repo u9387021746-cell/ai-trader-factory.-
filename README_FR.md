@@ -1,17 +1,21 @@
-# AI TRADER FACTORY 1.0 — Kraken + paper trading
+# AI TRADER FACTORY 3.0 FINAL
 
-Importer/remplacer à la racine du dépôt GitHub Pages : `index.html`, `manifest.webmanifest`, `sw.js` et le dossier `icons/` (PNG 192x192 et 512x512). Ne téléversez pas le ZIP lui-même.
+## Publication GitHub Pages
+1. Décompresser l’archive.
+2. Téléverser le contenu de ce dossier à la racine du dépôt GitHub Pages, en conservant `icons/`.
+3. Remplacer les fichiers existants et valider avec Commit changes.
+4. Ouvrir le site et actualiser complètement la page.
 
-## Déploiement Android
-1. Dépôt GitHub > Ajouter un fichier > Importer des fichiers.
-2. Importer les trois fichiers et le dossier icons, remplacer les anciens, puis valider les modifications.
-3. Attendre le déploiement Pages, ouvrir l'URL HTTPS et actualiser.
-4. Si l'ancien raccourci affiche encore l'ancienne version, supprimer ce raccourci puis le recréer depuis Chrome après actualisation.
+## Fonctions
+- Cours publics Kraken et bougies OHLC pour BTC, ETH, SOL, XRP et LTC contre USD.
+- Indicateurs EMA 9/21, RSI 14 et MACD, avec signal heuristique LONG/SHORT/NEUTRE.
+- Simulation uniquement : capital fictif, positions, stop-loss, take-profit, frais estimés, historique local et export CSV.
+- Gestion comptable paper : le notionnel est réservé à l’ouverture et rendu à la clôture, avec P/L et frais estimés.
+- Paramètres et historique stockés dans le navigateur local de l’appareil.
 
-## Fonctionnalités
-- API publique Kraken Ticker, sans clé privée ; BTC, ETH, SOL, XRP, LTC contre USD.
-- Paper trading local, positions et P/L indicatif ; actualisation toutes les 30 secondes.
-- Aucun ordre réel envoyé, aucune clé privée demandée.
-
-## Limites
-L'appel direct navigateur vers Kraken peut échouer selon CORS ou le réseau. En cas d'indisponibilité, l'interface le signale et n'invente pas de prix. Un backend HTTPS sera alors nécessaire. Les simulations n'intègrent pas encore correctement tous les frais, le spread, le slippage ou le financement. Elles ne prouvent pas la rentabilité.
+## Limites importantes
+- Aucun ordre réel, aucune clé privée et aucun backend.
+- Le signal n’est pas un modèle d’IA entraîné et le score n’est pas une probabilité de gain.
+- L’API publique peut être indisponible selon le réseau ou le navigateur. Les stops sont simulés uniquement lorsque l’application est ouverte et qu’une actualisation reçoit les cours.
+- Données stockées localement : elles ne se synchronisent pas entre appareils et peuvent être effacées par la suppression des données du site.
+- Frais, slippage, liquidité et exécution réelle ne sont pas reproduits intégralement. Tester avant toute utilisation décisionnelle.
